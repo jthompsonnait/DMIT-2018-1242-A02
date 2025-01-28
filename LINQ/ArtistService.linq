@@ -18,7 +18,13 @@
 //	or data processing operations.
 void Main()
 {
-
+	//	Pass
+	TestGetArtist(1).Dump("Pass - Valid ID");
+	TestGetArtist(1000).Dump("Pass - Valid ID - No artist found");
+	
+	//	Fail
+	//	Rule:	artistID must be valid
+	TestGetArtist(0).Dump("Fail - ArtistID must be Valid");
 }
 
 //	This region contains methods used for testing the functionality
@@ -74,6 +80,7 @@ public ArtistEditView GetArtist(int artistID)
 	//	These are processing rules that need to be satisfied
 	//		for valid data
 	//		Rule:	artistID must be valid
+	
 	if (artistID == 0)
 	{
 		throw new ArgumentNullException("Please provide a valid artist ID");
