@@ -157,7 +157,7 @@ public List<ArtistEditView> GetArtists(string artistName)
 	#endregion
 
 	return Artists
-		.Where(x => x.Name.ToUpper() == artistName.ToUpper())
+		.Where(x => x.Name.ToUpper().Contains(artistName.ToUpper()))
 		.Select(x => new ArtistEditView
 		{
 			ArtistID = x.ArtistId,
