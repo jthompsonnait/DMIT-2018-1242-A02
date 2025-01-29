@@ -23,7 +23,7 @@ void Main()
 		//	ArgumentNullExceptionTest(10000);
 
 		//	passing an invalid track ID (less than 1)
-		ExceptionTest(0);
+		//  ExceptionTest(0);
 	}
 	#region catch all exceptions
 	catch (AggregateException ex)
