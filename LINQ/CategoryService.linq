@@ -30,7 +30,67 @@ void Main()
 	//	Rule:	artistID must be valid
 	TestGetCategory(string.Empty).Dump("Fail - Category name was empty");
 	#endregion
+
+	#region Add New Category
+	//  Header information
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Add New Category  =====");
+	Console.WriteLine("==================");
+
+	//  create a new category view model for adding/editing
+	CategoryView categoryView = new CategoryView();
+
+	//  create a placeholder for the category name
+	string categoryName = string.Empty;
+
+	//	update the category name with the placeholder
+	categoryView.CategoryName = categoryName;
+
+	//  get last 5 records from the category table 
+	//	before adding new category record
+	Categories.Skip(Categories.Count() - 5).Dump("Return last 5 records before adding new category");
+
+
+	//  Fail
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Add New Category Fail =====");
+	Console.WriteLine("==================");
+
+	//  rule: 	category name is required
+	TestAddEditCategory(categoryView).Dump("Fail - Category name was empty");
+
+	//  Pass
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Add New Category Pass =====");
+	Console.WriteLine("==================");
+
+	//	update the category name with a valid random name
+	categoryName = GenerateName(6);
+	categoryView.CategoryName = categoryName;
+	TestAddEditCategory(categoryView).Dump($"Pass - Category has valid name: {categoryName}");
+
+	//  get last 5 records from the category table 
+	//	after adding new category record
+	Categories.Skip(Categories.Count() - 5).Dump("Return last 5 records after adding new category");
+
+	//  Fail
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Add New Category Fail =====");
+	Console.WriteLine("==================");
+
+	//  create a new category view model for adding/editing
+	//	required so that we have a categoryID of 0
+	categoryView = new CategoryView();
+
+	//	update the category name with an category name
+	categoryView.CategoryName = categoryName;
+
+	//  Fail
+	//  rule:	category cannot be duplicated (found more than once)
+	TestAddEditCategory(categoryView).Dump($"Fail - Category {categoryName} already exist");
+	#endregion
 }
+
 
 //	This region contains methods used for testing the functionality
 //	of the application's business logic and ensuring correctness.
@@ -85,6 +145,42 @@ public CategoryView TestGetCategory(string categoryName)
 	}
 	#endregion
 	return null;  //  Ensures a valid return value even on failure
+}
+
+/// <summary>
+/// Generates a random name of a given length.
+/// The generated name follows a pattern of alternating consonants and vowels.
+/// </summary>
+/// <param name="len">The desired length of the generated name.</param>
+/// <returns>A random name of the specified length.</returns>
+public string GenerateName(int len)
+{
+	// Create a new Random instance.
+	Random r = new Random();
+
+	// Define consonants and vowels to use in the name generation.
+	string[] consonants = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "l", "n", "p", "q", "r", "s", "sh", "zh", "t", "v", "w", "x" };
+	string[] vowels = { "a", "e", "i", "o", "u", "ae", "y" };
+
+	string Name = "";
+
+	// Start the name with an uppercase consonant and a vowel.
+	Name += consonants[r.Next(consonants.Length)].ToUpper();
+	Name += vowels[r.Next(vowels.Length)];
+
+	// Counter for tracking the number of characters added.
+	int b = 2;
+
+	// Add alternating consonants and vowels until we reach the desired length.
+	while (b < len)
+	{
+		Name += consonants[r.Next(consonants.Length)];
+		b++;
+		Name += vowels[r.Next(vowels.Length)];
+		b++;
+	}
+
+	return Name;
 }
 #endregion
 
@@ -170,18 +266,64 @@ public CategoryView AddEditCategory(CategoryView categoryView)
 	}
 
 	#endregion
-	
+
 	//	check to see if the category exist in the database
-	Category category = 
+	Category category =
 					Categories.Where(x => x.CategoryID == categoryView.CategoryID)
 					.Select(x => x).FirstOrDefault();
-					
+
 	//	if the category was not found (CategoryID == 0)
 	//		then we are dealing with a new category
 	if (category == null)
 	{
 		category = new Category();
 	}
+
+	//	Updating category name.
+	//	NOTE:	You do not have to update the promary key "CategoryID".
+	//				This is try for all privary keys for any view models.
+	//			- If is is a new category, the CategoryID will be "0"
+	//			- If is is na existing category, there is no need to update it.
+
+	category.CategoryName = categoryView.CategoryName;
+
+	//	You must set the RemoveFromViewFlag incase it has been soft delete
+	category.RemoveFromViewFlag = categoryView.RemoveFromViewFlag;
+
+	//	If there are errors present in the error list:
+	//	NOTE:	YOU CAN ONLY HAVE ONE CHECK FOR ERRORS AND SAVE CHANGES
+	//				IN A METHOD
+	if (errorList.Count() > 0)
+	{
+		//	Clearing the "track change" ensure consistency in our entity system.
+		//	Otherwise, we leave our entity system in flux
+		ChangeTracker.Clear();
+		//	Throw an AggregateException containing the list of business process errors.
+		throw new AggregateException("Unable to add or edit category.  Please check error message(s)"
+										, errorList);
+	}
+	else
+	{
+		if (category.CategoryID == 0)
+			//  Adding a new category record to the Category table
+			Categories.Add(category);
+		else
+			//	Updating an category record in the Category table
+			Categories.Update(category);
+
+		//	try catch handles issue from the database schema such as
+		//		max field length of 10 of value cannot be less than zero
+		try
+		{
+			//	NOTE:  YOU CAN ONLY HAVE ONE SAVE CHANGES IN A METHOD
+			SaveChanges();
+		}
+		catch (Exception ex)
+		{
+			throw new Exception($"An error occurred while saving: {ex.Message}", ex);
+		}
+	}
+	return GetCategory(categoryView.CategoryName);
 }
 #endregion
 
