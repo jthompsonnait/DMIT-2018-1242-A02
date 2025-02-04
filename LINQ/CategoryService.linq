@@ -35,6 +35,32 @@ void Main()
 //	This region contains methods used for testing the functionality
 //	of the application's business logic and ensuring correctness.
 #region Test Methods
+public CategoryView TestAddEditCategory(CategoryView categoryView)
+{
+	try
+	{
+		return AddEditCategory(categoryView);
+	}
+	#region catch all exceptions (define later)
+	catch (AggregateException ex)
+	{
+		foreach (var error in ex.InnerExceptions)
+		{
+			error.Message.Dump();
+		}
+	}
+	catch (ArgumentNullException ex)
+	{
+		GetInnerException(ex).Message.Dump();
+	}
+	catch (Exception ex)
+	{
+		GetInnerException(ex).Message.Dump();
+	}
+	#endregion
+	return null;  //  Ensures a valid return value even on failure
+}
+
 public CategoryView TestGetCategory(string categoryName)
 {
 	try
@@ -102,6 +128,60 @@ public CategoryView GetCategory(string categoryName)
 				RemoveFromViewFlag = x.RemoveFromViewFlag
 
 			}).FirstOrDefault();
+}
+
+public CategoryView AddEditCategory(CategoryView categoryView)
+{
+	#region Business Logic and Parameter Exceptiions
+	//	create a list<Exception> to contain all discovered errors
+	List<Exception> errorList = new List<Exception>();
+
+	//  Business Rules
+	//	These are processing rules that need to be satisfied
+	//		for valid data
+	//		Rule:	category view cannot be null
+	//		Rule:	category name is required
+	//		Rule:	category cannot be duplicated (found more than once)
+
+	//		Rule:	category view cannot be null
+	if (categoryView == null)
+	{
+		throw new ArgumentNullException("No category was supply");
+	}
+
+	//		Rule:	category name is required
+	if (string.IsNullOrWhiteSpace(categoryView.CategoryName))
+	{
+		errorList.Add(new Exception("Category name cannot be empty"));
+	}
+
+	//		Rule:	category cannot be duplicated (found more than once)
+	if (categoryView.CategoryID == 0)
+	{
+		bool categoryExist = Categories
+								.Where(x => x.CategoryName.ToUpper() ==
+										categoryView.CategoryName.ToUpper())
+								.Any();
+		if (categoryExist)
+		{
+			errorList.Add(new Exception("Category already exist in the database and cannot be enter again"));
+		}
+
+	}
+
+	#endregion
+	
+	//	check to see if the category exist in the database
+	Category category = 
+					Categories.Where(x => x.CategoryID == categoryView.CategoryID)
+					.Select(x => x).FirstOrDefault();
+					
+	//	if the category was not found (CategoryID == 0)
+	//		then we are dealing with a new category
+	if (category == null)
+	{
+		category = new Category();
+	}
 }
 #endregion
 
