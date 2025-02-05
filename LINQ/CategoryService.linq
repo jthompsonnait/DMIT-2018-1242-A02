@@ -89,6 +89,38 @@ void Main()
 	//  rule:	category cannot be duplicated (found more than once)
 	TestAddEditCategory(categoryView).Dump($"Fail - Category {categoryName} already exist");
 	#endregion
+
+	#region Edit Category
+	//  Header information
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Edit Existing Category  =====");
+	Console.WriteLine("==================");
+
+	//  get last 5 records from the category table 
+	//	before editing existing category record
+	Categories.Skip(Categories.Count() - 5).Dump("Return last 5 records before editing existing category");
+
+	//  get existing category using categoryname placeholder
+	string previousCategoryName = categoryName;
+	categoryView = GetCategory(categoryName);
+
+	//  validate that the category view is the one that we want.
+	categoryView.Dump($"Valid category has category name of {categoryName}");
+
+	//  Pass
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Edit Category Pass =====");
+	Console.WriteLine("==================");
+
+	//  update category name with a 10 character name
+	categoryName = GenerateName(10);
+	categoryView.CategoryName = categoryName;
+	TestAddEditCategory(categoryView).Dump($"Pass - Category name has been updated from {previousCategoryName} to {categoryName}");
+
+	//  get last 5 records from the category table 
+	//	after editing existing category record
+	Categories.Skip(Categories.Count() - 5).Dump("Return last 5 records after editing existing category");
+	#endregion
 }
 
 
