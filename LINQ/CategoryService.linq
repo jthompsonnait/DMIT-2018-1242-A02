@@ -1,6 +1,6 @@
 <Query Kind="Program">
   <Connection>
-    <ID>0a06d005-fd18-42d6-89d3-79eb231c2633</ID>
+    <ID>7f0f7433-55fe-4c62-86bb-a13560bd21fb</ID>
     <NamingServiceVersion>2</NamingServiceVersion>
     <Persist>true</Persist>
     <Driver Assembly="(internal)" PublicKeyToken="no-strong-name">LINQPad.Drivers.EFCore.DynamicDriver</Driver>
@@ -126,8 +126,24 @@ void Main()
 	//	after editing existing category record
 	Categories.Skip(Categories.Count() - 5).Dump("Return last 5 records after editing existing category");
 	#endregion
-	
-	GetCategory("Hopasuqujy").Dump();
+
+	#region Soft Delete
+	//  Header information
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Soft Delete =====");
+	Console.WriteLine("==================");
+
+	//  get existing category using categoryname placeholder
+	categoryView = GetCategory(categoryName);
+	//  set remove from view flag to true
+	categoryView.RemoveFromViewFlag = true;
+
+	TestAddEditCategory(categoryView).Dump("Pass - Remove from view flag has been updated");
+
+	//  get last 5 records from the category table 
+	//	after editing existing category record
+	Categories.Skip(Categories.Count() - 5).Dump("Return last 5 records after updating remove from view flag");
+	#endregion
 }
 
 
