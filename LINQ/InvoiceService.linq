@@ -205,8 +205,97 @@ public InvoiceView AddEditInvoice(InvoiceView invoiceView)
 		}
 	}
 	#endregion
-}
 
+	// Retrieve the invoice from the database or create a new one if it doesn't exist.
+	Invoice invoice = Invoices
+							.Where(x => x.InvoiceID == invoiceView.InvoiceID)
+							.FirstOrDefault();
+	// If the invoice doesn't exist, initialize it.
+	if (invoice == null)
+	{
+		invoice = new Invoice();
+		invoice.InvoiceDate = DateOnly.FromDateTime(DateTime.Now); // Set the current date for new invoices.
+	}
+	else
+	{
+		// Update the date for existing invoices.
+		invoice.InvoiceDate = invoiceView.InvoiceDate;
+	}
+	// Map attributes from the view model to the data model.
+	invoice.CustomerID = invoiceView.CustomerID;
+	invoice.EmployeeID = invoiceView.EmployeeID;
+	//  reset the subtotal & total as this will be updated from the invoice lines.
+	invoice.SubTotal = 0;
+	invoice.Tax = 0;
+	invoice.RemoveFromViewFlag = invoiceView.RemoveFromViewFlag;
+
+	// Process each line item in the provided view model.
+	foreach (var invoiceLineView in invoiceView.InvoiceLines)
+	{
+		InvoiceLine invoiceLine = InvoiceLines
+										.Where(x => x.InvoiceLineID == invoiceLineView.InvoiceLineID
+												&& !x.RemoveFromViewFlag)
+										.FirstOrDefault();
+		// If the line item doesn't exist, initialize it.
+		if (invoiceLine == null)
+		{
+			invoiceLine = new InvoiceLine();
+			invoiceLine.PartID = invoiceLineView.PartID;
+		}
+		// Map fields from the line item view model to the data model.
+		invoiceLine.Quantity = invoiceLineView.Quantity;
+		invoiceLine.Price = invoiceLineView.Price;
+		invoiceLine.RemoveFromViewFlag = invoiceLineView.RemoveFromViewFlag;
+
+		// Handle new or existing line items.
+		if (invoiceLine.InvoiceLineID == 0)
+		{
+			invoice.InvoiceLines.Add(invoiceLine); // Add new line items.
+		}
+		else
+		{
+			InvoiceLines.Update(invoiceLine); // Update existing line items.
+		}
+		//    need to update total and tax if the 
+		//        invoice line item is not set to be removed from view.
+		if (!invoiceLine.RemoveFromViewFlag)
+		{
+			invoice.SubTotal += invoiceLine.Quantity * invoiceLine.Price;
+			bool isTaxable = Parts
+								.Where(x => x.PartID == invoiceLine.PartID)
+								.Select(x => x.Taxable)
+								.FirstOrDefault();
+			invoice.Tax += isTaxable ? invoiceLine.Quantity * invoiceLine.Price * .05m : 0;
+		}
+	}
+	// If it's a new invoice, add it to the collection.
+	if (invoice.InvoiceID == 0)
+	{
+		Invoices.Add(invoice);
+	}
+	else
+	{
+		Invoices.Update(invoice);
+	}
+
+	//    If there are errors present in the error list:
+	//    NOTE:  YOU CAN ONLY HAVE ONE CHECK FOR ERRORS AND SAVE CHANGES
+	//              IN A METHOD
+	if (errorList.Count > 0)
+	{
+		// Clear changes to maintain data integrity.
+		ChangeTracker.Clear();
+		string errorMsg = "Unable to add or edit Invoice or Invoice Lines.";
+		errorMsg += " Please check error message(s)";
+		throw new AggregateException(errorMsg, errorList);
+	}
+	else
+	{
+		//    NOTE:  YOU CAN ONLY HAVE ONE SAVE CHANGES IN A METHOD    
+		SaveChanges();
+	}
+	return GetInvoice(invoice.InvoiceID);
+}
 #endregion
 
 //	This region includes the view models used to 
