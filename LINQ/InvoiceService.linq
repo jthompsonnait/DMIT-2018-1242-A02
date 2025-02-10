@@ -31,7 +31,7 @@ public InvoiceView TestGetInvoice(int invoiceID)
 {
 	try
 	{
-		return  GetInvoice(invoiceID);
+		return GetInvoice(invoiceID);
 	}
 	#region catch all exceptions (define later)
 	catch (AggregateException ex)
@@ -118,8 +118,7 @@ public InvoiceView GetInvoice(int invoiceID)
 					Tax = x.Tax,
 					RemoveFromViewFlag = x.RemoveFromViewFlag,
 					InvoiceLines = x.InvoiceLines
-										.Where(il => il.InvoiceID == invoiceID
-													&& !il.RemoveFromViewFlag)
+										.Where(il => !il.RemoveFromViewFlag)
 										.Select(il => new InvoiceLineView
 										{
 											InvoiceLineID = il.InvoiceLineID,
@@ -135,7 +134,77 @@ public InvoiceView GetInvoice(int invoiceID)
 
 public InvoiceView AddEditInvoice(InvoiceView invoiceView)
 {
-	return null;
+	#region Business Logic and Parameter Exceptions
+	//    create a list<Exception> to contain all discovered errors
+	List<Exception> errorList = new List<Exception>();
+	//  Business Rules
+	//    These are processing rules that need to be satisfied
+	//        for valid data
+	//    rule:    invoice cannot be null
+	if (invoiceView == null)
+	{
+		throw new ArgumentNullException("No invoice was supply");
+	}
+	//    rule:    customer id must be supply
+	if (invoiceView.CustomerID == 0)
+	{
+		errorList.Add(new Exception("Customer is required"));
+	}
+	//    rule:    employee id must be supply    
+	if (invoiceView.EmployeeID == 0)
+	{
+		errorList.Add(new Exception("Employee is required"));
+	}
+	//    rule:    there must be invoice lines provided
+	if (invoiceView.InvoiceLines.Count == 0)
+	{
+		errorList.Add(new Exception("Invoice details are required"));
+	}
+	//    rule:    for each invoice line, there must be a part
+	//    rule:    for each invoice line, the price cannot be less than zero
+	//    rule:    for each invoice line, the quantity cannot be less than 1
+	foreach (var invoiceLine in invoiceView.InvoiceLines)
+	{
+		if (invoiceLine.PartID == 0)
+		{
+			throw new ArgumentNullException("Missing part ID");
+		}
+		if (invoiceLine.Price < 0)
+		{
+			string partName = Parts
+								.Where(x => x.PartID == invoiceLine.PartID)
+								.Select(x => x.Description)
+								.FirstOrDefault();
+			errorList.Add(new Exception($"Part {partName} has a price that is less than zero"));
+		}
+		if (invoiceLine.Quantity < 1)
+		{
+			string partName = Parts
+								.Where(x => x.PartID == invoiceLine.PartID)
+								.Select(x => x.Description)
+								.FirstOrDefault();
+			errorList.Add(new Exception($"Part {partName} has a quantity that is less than one"));
+		}
+	}
+
+	//    rule:    parts cannot be duplicated on more than one line.
+	List<string> duplicatedParts = invoiceView.InvoiceLines
+									.GroupBy(x => new { x.PartID })
+									.Where(gb => gb.Count() > 1)
+									.OrderBy(gb => gb.Key.PartID)
+									.Select(gb => Parts
+													.Where(p => p.PartID == gb.Key.PartID)
+													.Select(p => p.Description)
+													.FirstOrDefault()
+									).ToList();
+	if (duplicatedParts.Count > 0)
+	{
+		foreach (var partName in duplicatedParts)
+		{
+			errorList.Add(new Exception($"Part {partName} can only be added to the invoice lines once."));
+		}
+	}
+	#endregion
 }
 
 #endregion
