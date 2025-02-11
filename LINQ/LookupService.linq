@@ -2,7 +2,6 @@
   <Connection>
     <ID>0a06d005-fd18-42d6-89d3-79eb231c2633</ID>
     <NamingServiceVersion>2</NamingServiceVersion>
-    <Persist>true</Persist>
     <Driver Assembly="(internal)" PublicKeyToken="no-strong-name">LINQPad.Drivers.EFCore.DynamicDriver</Driver>
     <AllowDateOnlyTimeOnly>true</AllowDateOnlyTimeOnly>
     <Server>.</Server>
@@ -46,17 +45,87 @@ void Main()
 	Console.WriteLine("==================");
 	Console.WriteLine("=====  Add New Lookup  =====");
 	Console.WriteLine("==================");
+	Console.WriteLine();
 
-	//  create a new lookupView view model for adding/editing
+	//  create a new category view model for adding/editing
 	LookupView lookupView = new LookupView();
 
-	// Fail
+	//  Fail
 	Console.WriteLine("==================");
-	Console.WriteLine("=====  Add New Lookup Fail  =====");
+	Console.WriteLine("=====  Add New Lookup Fail =====");
 	Console.WriteLine("==================");
 
-	//		rule: 	category id is required
-	TestAddEditLookup(lookupView).Dump("Fail - Category ID is missing");
+	//  rule: 	category ID is required
+	TestAddEditLookup(lookupView).Dump("Fail - Category ID");
+
+	//  get a list of categories
+	Categories.Take(100).Dump();
+
+	//  update category ID with Test1, still missing lookup name
+	lookupView.CategoryID = 2014;
+
+	//  Fail
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Add New Lookup Fail =====");
+	Console.WriteLine("==================");
+	//  rule: 	lookup name is required
+	TestAddEditLookup(lookupView).Dump("Fail - Missing lookup name");
+
+	//  Pass
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Add New Lookup Pass =====");
+	Console.WriteLine("==================");
+	//  get last 5 records from the lookup table 
+	//	before adding new lookup record
+	Lookups.Skip(Lookups.Count() - 5).Dump("Return last 5 records before adding new lookup");
+
+	//	update the category name with the valid random eight character name
+	string lookupViewName = GenerateName(8);
+	lookupView.Name = lookupViewName;
+	TestAddEditLookup(lookupView).Dump($"Pass - Lookup has valid name {lookupViewName} & category ID");
+
+	//  get last 5 records from the lookup table 
+	//	after adding new lookup record
+	Lookups.Skip(Lookups.Count() - 5).Dump("Return last 5 records after adding new lookup");
+
+	//  Fail
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Add New Lookup Fail =====");
+	Console.WriteLine("==================");
+
+	//  create a new lookup view model for adding/editing
+	//	required so that we have a LookupID of 0
+	lookupView = new LookupView();
+
+	//  update category ID with Test1 and current name 
+	lookupView.CategoryID = 2014;
+	lookupView.Name = lookupViewName;
+
+	//  Fail
+	//  rule:	category cannot be duplicated (found more than once)
+	TestAddEditLookup(lookupView).Dump($"Fail - Lookup {lookupViewName} already exist");
+
+	//  Pass
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Add Edit Lookup Pass =====");
+	Console.WriteLine("==================");
+	//  get last 5 records from the lookup table 
+	//	before editing existing lookup record
+	Lookups.Skip(Lookups.Count() - 5).Dump("Return last 5 records before editing existing lookup");
+
+	//	update the lookup name with the valid lookup name
+	lookupView = new LookupView();
+
+	//  update last lookup with category ID and new generate name 
+	lookupView.LookupID = Lookups.Skip(Lookups.Count() - 1).Select(x => x.LookupID).FirstOrDefault();
+	lookupView.CategoryID = 2014;
+	lookupView.Name = GenerateName(14); ;
+	TestAddEditLookup(lookupView).Dump($"Pass - Lookup has new valid name: {lookupView.Name}");
+
+	//  get last 5 records from the lookup table 
+	//	after editing existing lookup record
+	Lookups.Skip(Lookups.Count() - 5).Dump("Return last 5 records after editing existing lookup");
+
 	#endregion
 
 }

@@ -2,7 +2,6 @@
   <Connection>
     <ID>0a06d005-fd18-42d6-89d3-79eb231c2633</ID>
     <NamingServiceVersion>2</NamingServiceVersion>
-    <Persist>true</Persist>
     <Driver Assembly="(internal)" PublicKeyToken="no-strong-name">LINQPad.Drivers.EFCore.DynamicDriver</Driver>
     <AllowDateOnlyTimeOnly>true</AllowDateOnlyTimeOnly>
     <Server>.</Server>
@@ -21,7 +20,84 @@
 //	or data processing operations.
 void Main()
 {
+	#region Add New Invoice
+	//  Header information
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Add New Invoice  =====");
+	Console.WriteLine("==================");
+	//    setup Add Invoice
+	InvoiceView invoiceView = new InvoiceView();
 
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Add New Invoice Fail =====");
+	Console.WriteLine("==================");
+	//    rule:    customer id must be supply
+	//    rule:    employee id must be supply    
+	//    rule:    there must be invoice lines provided
+	//    rule:    for each invoice line, there must be a part
+	//    rule:    for each invoice line, the price cannot be less than zero
+	//    rule:    for each invoice line, the quantity cannot be less than one
+	//    rule:    parts cannot be duplicated on more than one line.
+	TestAddEditInvoice(invoiceView).Dump("Fail - All rules but missing model and rules involving invoice lines");
+
+	//  do not set the InvoiceID
+	//    Sam Smith (Customer)
+	invoiceView.CustomerID = 1;
+	// Willie Work (Employee)
+	invoiceView.EmployeeID = 2;
+	TestAddEditInvoice(invoiceView).Dump("Fail - Rules missing invoice lines");
+
+	//  add invoice items
+	InvoiceLineView invoiceLine = new InvoiceLineView();
+	invoiceLine.PartID = 0;
+	invoiceView.InvoiceLines.Add(invoiceLine);
+	TestAddEditInvoice(invoiceView).Dump("Fail - Missing partID and price");
+
+	invoiceLine.PartID = 1;
+	invoiceLine.Price = -1m;
+	TestAddEditInvoice(invoiceView).Dump("Fail - Price is less than zero");
+
+	invoiceLine.PartID = 1;
+	invoiceLine.Price = 10m;
+	invoiceLine.Quantity = 1;
+	//  adding second invoice line item, same part ID
+	invoiceLine = new InvoiceLineView();
+	invoiceLine.PartID = 1;
+	invoiceLine.Price = 10m;
+	invoiceLine.Quantity = 2;
+	invoiceView.InvoiceLines.Add(invoiceLine);
+	TestAddEditInvoice(invoiceView).Dump("Fail - Parts cannot be duplicated on more than one line");
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Add New Invoice Pass =====");
+	Console.WriteLine("==================");
+	//  need to remove the second invoice line.
+	invoiceView.InvoiceLines.Remove(invoiceLine);
+	//  get last 5 records from the invoice table 
+	//    before adding new invoice record
+	Invoices.Skip(Invoices.Count() - 5).Dump("Return last 5 records before adding new invoice");
+	TestAddEditInvoice(invoiceView).Dump("Pass - New invoice with one invoice line");
+	//  get last 5 records from the invoice table 
+	//    after adding new invoice record
+	Invoices.Skip(Invoices.Count() - 5).Dump("Return last 5 records after adding new invoice");
+
+	Console.WriteLine("==================");
+	Console.WriteLine("=====  Edit Existing Invoice Pass =====");
+	Console.WriteLine("==================");
+	int lastInvoiceID = Invoices.Skip(Invoices.Count() - 1).Select(x => x.InvoiceID).FirstOrDefault();
+	invoiceView = GetInvoice(lastInvoiceID);
+	invoiceView.Dump("Last invoice in the invoice table");
+	//  update employee to "Nole Body"
+	invoiceView.EmployeeID = 1;
+	//  update qty from 1 to 10
+	invoiceView.InvoiceLines[0].Quantity = 10;
+	//  create a new invoice line
+	invoiceLine = new InvoiceLineView();
+	invoiceLine.PartID = 3;
+	invoiceLine.Price = 150m;
+	invoiceLine.Quantity = 2;
+	invoiceView.InvoiceLines.Add(invoiceLine);
+	TestAddEditInvoice(invoiceView).Dump($"Pass - Updated invoice {lastInvoiceID}");
+	#endregion
 }
 
 //	This region contains methods used for testing the functionality
