@@ -1,0 +1,171 @@
+﻿@page "/SamplePages/Basics"
+
+<PageTitle>Review page basics</PageTitle>
+
+<MudText Typo="Typo.h3">Introduction to MudBlazor</MudText>
+
+<MudCard>
+    <MudCardHeader>
+        <MudText Typo="Typo.h5">Demonstration of using Methods</MudText>
+    </MudCardHeader>
+    <MudCardContent>
+        @if (IsEven)
+        {
+            <MudText>@MY_NAME is even (value: @oddEvenValue)</MudText>
+        }
+        else
+        {
+            <MudText>The random number is odd (value: @oddEvenValue)</MudText>
+        }
+    </MudCardContent>
+    <MudCardActions>
+        <MudButton OnClick="RandomValue"
+                   Variant="Variant.Filled"
+                   Color="Color.Primary">
+            Random Number
+        </MudButton>
+    </MudCardActions>
+</MudCard>
+
+<MudGrid Justify="Justify.SpaceEvenly"
+         Spacing="2"
+         Class="mt-4">
+    <MudItem sm="12" md="4">
+        <MudForm @ref="textForm">
+            <!-- Heading for this Section -->
+            <MudText Typo="Typo.h4">Text Boxes</MudText>
+            <!-- Using MudTextBoxes to input Email and Password -->
+            <MudTextField Label="Email" 
+                          Required="true" 
+                          RequiredError="Email is required." 
+                          @bind-Value="emailText" 
+                          InputType="InputType.Email" 
+                          Variant="Variant.Outlined"
+                          Immediate="true" />
+            <MudTextField Label="Password"
+                          Required="true"
+                          RequiredError="Password is required."
+                          @bind-Value="passwordText"
+                          InputType="InputType.Password"
+                          Variant="Variant.Outlined"
+                          Immediate="true" />
+            <!-- Using MudDatePicker to input a Date -->
+            <MudDatePicker Label="Enter a Date"
+                           @bind-Date="dateText"
+                           Variant="Variant.Outlined" />
+            <!-- Buttons to trigger Validation and the TextSubmit Method -->
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Secondary"
+                       OnClick="@(()=>textForm.Validate())"
+                       Class="mb-2">
+                Validate Text
+            </MudButton>
+            <MudButton Variant="Variant.Filled" 
+                       Color="Color.Primary"
+                       OnClick="TextSubmit">
+                Text Submit
+            </MudButton>
+        </MudForm>
+    </MudItem>
+    <MudItem sm="12" md="4">
+        <MudForm @ref="radioCheckForm" 
+                 Class="ms-4">
+            <MudText Typo="Typo.h4">Radio buttons, Checkbox, Text Area</MudText>
+
+
+            <MudRadioGroup @bind-Value="mealMud">
+                <MudText Typo="Typo.h6">Select your favourite meal (MudBlazor):</MudText>
+                @foreach (var meal in meals)
+                {
+                    <MudRadio Value="@meal" class="form-check-input">@meal</MudRadio>
+                    <br />
+                }
+            </MudRadioGroup>
+            <MudCheckBox @bind-Value="acceptanceBox" 
+                         Label="I accept the terms of service." />
+            <MudTextField Label="Enter your message"
+                          @bind-Value="messageBody"
+                          Variant="Variant.Outlined"
+                          Immediate="true" 
+                          Lines="5"/>
+            <div class="d-flex flex-wrap justify-center">
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           OnClick="RadioCheckAreaSubmit">
+                    Radio/Check/Area Submit
+                </MudButton>
+            </div>
+        </MudForm>
+    </MudItem>
+    <MudItem sm="12" md="4">
+        <MudForm @ref="listSlideForm"
+                 Class="ms-4">
+            <MudText Typo="Typo.h4">List and Slider</MudText>
+            <MudSelect Label="Select a Ride"
+                       @bind-Value="myRide"
+                       Variant="Variant.Outlined"
+                       PlaceHolder="Select ride..."
+                       Clearable="true"
+                       Required="true"
+                       RequiredError="Ride selection is required">
+                @foreach (var item in rides)
+                {
+                    <MudSelectItem T="int?" Value="@item.Key">@item.Value</MudSelectItem>
+                }
+            </MudSelect>
+            <MudSelect Label="Select Vacation Spots"
+                       @bind-Value="vacationSpot"
+                       @bind-SelectedValues="selectedVacationSpots"
+                       Variant="Variant.Outlined"
+                       MultiSelection="true"
+                       Clearable="true"
+                       Required="true"
+                       RequiredError="Vacation spot selection is required"
+                       PlaceHolder="Select Vacation Spots...">
+                @foreach(var item in vacationSpots)
+                {
+                    <MudSelectItem T="string" Value="@item">@item</MudSelectItem>
+                }
+            </MudSelect>
+            <br />
+            <MudSlider @bind-Value="reviewRating"
+                       Min="0"
+                       Max="10"
+                       Step="1">
+                Rate the form control review (0 = bad, 10 = good)
+            </MudSlider>
+            <MudText Typo="Typo.body2" Color="Color.Secondary">Rating: @reviewRating</MudText>
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-wrap justify-center">
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Secondary"
+                               OnClick="@(()=>listSlideForm.Validate())"
+                               Class="mb-2 mt-2">
+                        Validate List/Slider
+                    </MudButton>
+                </div>
+                <div class="d-flex flex-wrap justify-center">
+                    <MudButton Color="Color.Primary"
+                               Variant="Variant.Filled"
+                               OnClick="ListSliderSubmit">
+                        List/Slider Submit
+                    </MudButton>
+                </div>
+            </div>
+        </MudForm>
+    </MudItem>
+</MudGrid>
+<div class="mt-2">
+    <MudText Typo="Typo.h5">@feedback</MudText>
+</div>
+
+
+
+
+
+
+
+
+
+
+
