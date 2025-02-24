@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|solutionrelative:hogwildweb\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\samplepages\\basics.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|solutionrelative:hogwildweb\\components\\samplepages\\basics.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\samplepages\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|solutionrelative:hogwildweb\\components\\samplepages\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|solutionrelative:hogwildweb\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,16 +22,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Basics.razor.cs",
               "DocumentMoniker": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\SamplePages\\Basics.razor.cs",
               "RelativeDocumentMoniker": "HogWildWeb\\Components\\SamplePages\\Basics.razor.cs",
-              "ToolTip": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\SamplePages\\Basics.razor.cs*",
-              "RelativeToolTip": "HogWildWeb\\Components\\SamplePages\\Basics.razor.cs*",
+              "ToolTip": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\SamplePages\\Basics.razor.cs",
+              "RelativeToolTip": "HogWildWeb\\Components\\SamplePages\\Basics.razor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T16:35:16.445Z",
@@ -39,7 +39,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Class.cs",
               "DocumentMoniker": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\SamplePages\\Class.cs",
               "RelativeDocumentMoniker": "HogWildWeb\\Components\\SamplePages\\Class.cs",
@@ -52,13 +52,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "HogWildWeb\\Components\\Layout\\NavMenu.razor",
               "ToolTip": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Layout\\NavMenu.razor",
               "RelativeToolTip": "HogWildWeb\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-24T16:34:27.192Z",
               "EditorCaption": ""
