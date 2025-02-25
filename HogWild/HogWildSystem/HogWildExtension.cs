@@ -1,6 +1,7 @@
 ﻿using HogWildSystem.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using HogWildSystem.BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
