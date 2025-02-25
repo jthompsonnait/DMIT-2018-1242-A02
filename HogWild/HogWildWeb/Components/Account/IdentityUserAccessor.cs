@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
-using hogwildweb.Data;
+using HogWildWeb.Data;
 
-namespace hogwildweb.Components.Account;
+namespace HogWildWeb.Components.Account;
 
 internal sealed class IdentityUserAccessor(UserManager<ApplicationUser> userManager, IdentityRedirectManager redirectManager)
 {

@@ -1,18 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\",
+  "WorkspaceRootPath": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|solutionrelative:hogwildweb\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|e:\\github\\_jan 2025\\dmit-2018-1242-a02\\hogwild\\hogwildsystem\\entities\\workingversion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|solutionrelative:hogwildsystem\\entities\\workingversion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\samplepages\\basics.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|solutionrelative:hogwildweb\\components\\samplepages\\basics.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|e:\\github\\_jan 2025\\dmit-2018-1242-a02\\hogwild\\hogwildsystem\\entities\\part.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|solutionrelative:hogwildsystem\\entities\\part.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\samplepages\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33FBEA3F-0C8C-4C5F-B43B-DA503D9863C9}|HogWildWeb\\hogwildweb.csproj|solutionrelative:hogwildweb\\components\\samplepages\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|e:\\github\\_jan 2025\\dmit-2018-1242-a02\\hogwild\\hogwildsystem\\entities\\lookup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|solutionrelative:hogwildsystem\\entities\\lookup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|e:\\github\\_jan 2025\\dmit-2018-1242-a02\\hogwild\\hogwildsystem\\entities\\invoiceline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|solutionrelative:hogwildsystem\\entities\\invoiceline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|e:\\github\\_jan 2025\\dmit-2018-1242-a02\\hogwild\\hogwildsystem\\entities\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|solutionrelative:hogwildsystem\\entities\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|e:\\github\\_jan 2025\\dmit-2018-1242-a02\\hogwild\\hogwildsystem\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|solutionrelative:hogwildsystem\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|e:\\github\\_jan 2025\\dmit-2018-1242-a02\\hogwild\\hogwildsystem\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|solutionrelative:hogwildsystem\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|e:\\github\\_jan 2025\\dmit-2018-1242-a02\\hogwild\\hogwildsystem\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|solutionrelative:hogwildsystem\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|e:\\github\\_jan 2025\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\pages\\samplepages\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|solutionrelative:hogwildweb\\components\\pages\\samplepages\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|e:\\github\\_jan 2025\\dmit-2018-1242-a02\\hogwild\\hogwildsystem\\dal\\hogwildcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|solutionrelative:hogwildsystem\\dal\\hogwildcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|e:\\github\\_jan 2025\\dmit-2018-1242-a02\\hogwild\\hogwildsystem\\bll\\dummy.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|solutionrelative:hogwildsystem\\bll\\dummy.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,46 +54,188 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 17,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Basics.razor.cs",
-              "DocumentMoniker": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\SamplePages\\Basics.razor.cs",
-              "RelativeDocumentMoniker": "HogWildWeb\\Components\\SamplePages\\Basics.razor.cs",
-              "ToolTip": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\SamplePages\\Basics.razor.cs",
-              "RelativeToolTip": "HogWildWeb\\Components\\SamplePages\\Basics.razor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "dummy.txt",
+              "DocumentMoniker": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\BLL\\dummy.txt",
+              "RelativeDocumentMoniker": "HogWildSystem\\BLL\\dummy.txt",
+              "ToolTip": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\BLL\\dummy.txt",
+              "RelativeToolTip": "HogWildSystem\\BLL\\dummy.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-25T15:30:46.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HogWildContext.cs",
+              "DocumentMoniker": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\DAL\\HogWildContext.cs",
+              "RelativeDocumentMoniker": "HogWildSystem\\DAL\\HogWildContext.cs",
+              "ToolTip": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\DAL\\HogWildContext.cs",
+              "RelativeToolTip": "HogWildSystem\\DAL\\HogWildContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T16:35:16.445Z",
+              "WhenOpened": "2025-02-25T15:45:40.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Category.cs",
+              "DocumentMoniker": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\Category.cs",
+              "RelativeDocumentMoniker": "HogWildSystem\\Entities\\Category.cs",
+              "ToolTip": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\Category.cs",
+              "RelativeToolTip": "HogWildSystem\\Entities\\Category.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T15:48:27.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Class.cs",
+              "DocumentMoniker": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Pages\\SamplePages\\Class.cs",
+              "RelativeDocumentMoniker": "HogWildWeb\\Components\\Pages\\SamplePages\\Class.cs",
+              "ToolTip": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Pages\\SamplePages\\Class.cs",
+              "RelativeToolTip": "HogWildWeb\\Components\\Pages\\SamplePages\\Class.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T15:48:48.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\Customer.cs",
+              "RelativeDocumentMoniker": "HogWildSystem\\Entities\\Customer.cs",
+              "ToolTip": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\Customer.cs",
+              "RelativeToolTip": "HogWildSystem\\Entities\\Customer.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T15:50:24.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "HogWildSystem\\Entities\\Employee.cs",
+              "ToolTip": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\Employee.cs",
+              "RelativeToolTip": "HogWildSystem\\Entities\\Employee.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T15:50:43.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Invoice.cs",
+              "DocumentMoniker": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\Invoice.cs",
+              "RelativeDocumentMoniker": "HogWildSystem\\Entities\\Invoice.cs",
+              "ToolTip": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\Invoice.cs",
+              "RelativeToolTip": "HogWildSystem\\Entities\\Invoice.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T15:50:47.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InvoiceLine.cs",
+              "DocumentMoniker": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\InvoiceLine.cs",
+              "RelativeDocumentMoniker": "HogWildSystem\\Entities\\InvoiceLine.cs",
+              "ToolTip": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\InvoiceLine.cs",
+              "RelativeToolTip": "HogWildSystem\\Entities\\InvoiceLine.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T15:50:51.324Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Class.cs",
-              "DocumentMoniker": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\SamplePages\\Class.cs",
-              "RelativeDocumentMoniker": "HogWildWeb\\Components\\SamplePages\\Class.cs",
-              "ToolTip": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\SamplePages\\Class.cs",
-              "RelativeToolTip": "HogWildWeb\\Components\\SamplePages\\Class.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Lookup.cs",
+              "DocumentMoniker": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\Lookup.cs",
+              "RelativeDocumentMoniker": "HogWildSystem\\Entities\\Lookup.cs",
+              "ToolTip": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\Lookup.cs",
+              "RelativeToolTip": "HogWildSystem\\Entities\\Lookup.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T16:35:12.069Z",
+              "WhenOpened": "2025-02-25T15:50:55.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Part.cs",
+              "DocumentMoniker": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\Part.cs",
+              "RelativeDocumentMoniker": "HogWildSystem\\Entities\\Part.cs",
+              "ToolTip": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\Part.cs",
+              "RelativeToolTip": "HogWildSystem\\Entities\\Part.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T15:50:58.688Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "HogWildWeb\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "HogWildWeb\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-24T16:34:27.192Z",
+              "Title": "WorkingVersion.cs",
+              "DocumentMoniker": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\WorkingVersion.cs",
+              "RelativeDocumentMoniker": "HogWildSystem\\Entities\\WorkingVersion.cs",
+              "ToolTip": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\Entities\\WorkingVersion.cs",
+              "RelativeToolTip": "HogWildSystem\\Entities\\WorkingVersion.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T15:51:02.012Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 175,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             }
           ]
         }

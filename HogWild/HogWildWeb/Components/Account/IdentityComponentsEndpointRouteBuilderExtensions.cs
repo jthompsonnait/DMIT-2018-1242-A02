@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
-using hogwildweb.Components.Account.Pages;
-using hogwildweb.Components.Account.Pages.Manage;
-using hogwildweb.Data;
+using HogWildWeb.Components.Account.Pages;
+using HogWildWeb.Components.Account.Pages.Manage;
+using HogWildWeb.Data;
 
 namespace Microsoft.AspNetCore.Routing;
 

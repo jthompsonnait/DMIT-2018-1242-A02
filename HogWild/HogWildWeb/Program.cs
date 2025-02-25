@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MudBlazor.Services;
-using hogwildweb.Components;
-using hogwildweb.Components.Account;
-using hogwildweb.Data;
+using HogWildWeb.Components;
+using HogWildWeb.Components.Account;
+using HogWildWeb.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

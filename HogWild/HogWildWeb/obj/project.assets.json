@@ -1913,6 +1913,19 @@
             "rid": "win"
           }
         }
+      },
+      "HogWildSystem/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.1"
+        },
+        "compile": {
+          "bin/placeholder/HogWildSystem.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HogWildSystem.dll": {}
+        }
       }
     }
   },
@@ -5356,11 +5369,17 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "HogWildSystem/1.0.0": {
+      "type": "project",
+      "path": "../HogWildSystem/HogWildSystem.csproj",
+      "msbuildProject": "../HogWildSystem/HogWildSystem.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
       "Extensions.MudBlazor.StaticInput >= 3.*",
+      "HogWildSystem >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 9.*",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 9.*",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.*",
@@ -5369,23 +5388,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JTHOMPSON\\.nuget\\packages\\": {},
+    "C:\\Users\\info\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\hogwildweb\\hogwildweb.csproj",
-      "projectName": "hogwildweb",
-      "projectPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\hogwildweb\\hogwildweb.csproj",
-      "packagesPath": "C:\\Users\\JTHOMPSON\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\hogwildweb\\obj\\",
+      "projectUniqueName": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj",
+      "projectName": "HogWildWeb",
+      "projectPath": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj",
+      "packagesPath": "C:\\Users\\info\\.nuget\\packages\\",
+      "outputPath": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\JTHOMPSON\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\info\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5395,13 +5414,16 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.telerik.com/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj": {
+              "projectPath": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -5414,7 +5436,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net9.0": {
@@ -5464,7 +5486,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

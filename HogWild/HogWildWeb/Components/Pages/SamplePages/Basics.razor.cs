@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components.Forms;
 using MudBlazor;
 
-namespace hogwildweb.Components.SamplePages
+namespace HogWildWeb.Components.Pages.SamplePages
 {
     public partial class Basics
     {

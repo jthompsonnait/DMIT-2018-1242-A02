@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Components;
 
-namespace hogwildweb.Components.Account;
+namespace HogWildWeb.Components.Account;
 
 internal sealed class IdentityRedirectManager(NavigationManager navigationManager)
 {

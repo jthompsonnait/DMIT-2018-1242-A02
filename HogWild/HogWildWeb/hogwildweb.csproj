@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-hogwildweb-9c8762d1-a37b-49eb-b410-c3d8311f1f02</UserSecretsId>
+    <UserSecretsId>aspnet-HogWildWeb-7a559157-b543-4aae-8998-c1ddb8218f4c</UserSecretsId>
   </PropertyGroup>
 
 
@@ -15,6 +15,11 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.*" />
     <PackageReference Include="MudBlazor" Version="8.*" />
     <PackageReference Include="Extensions.MudBlazor.StaticInput" Version="3.*" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\HogWildSystem\HogWildSystem.csproj" />
   </ItemGroup>
 
 </Project>

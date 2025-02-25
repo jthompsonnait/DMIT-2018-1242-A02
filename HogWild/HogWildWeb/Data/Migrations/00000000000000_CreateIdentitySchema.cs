@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace hogwildweb.Migrations
+namespace HogWildWeb.Migrations
 {
     /// <inheritdoc />
     public partial class CreateIdentitySchema : Migration
