@@ -5,3 +5,81 @@
 <!-- Displays a heading using MudBlazor's MudText component with "h3" typography. -->
 <MudText Typo="Typo.h3">Current Working Version Info</MudText>
 
+@if (workingVersionView?.VersionID > 0)
+{
+    <MudText Typo="Typo.h5"><strong>Version ID:</strong> @workingVersionView.VersionID</MudText>
+    <MudText Typo="Typo.h5"><strong>Major:</strong> @workingVersionView.Major</MudText>
+    <MudText Typo="Typo.h5"><strong>Minor:</strong> @workingVersionView.Minor</MudText>
+    <MudText Typo="Typo.h5"><strong>Build:</strong> @workingVersionView.Build</MudText>
+    <MudText Typo="Typo.h5"><strong>Revision:</strong> @workingVersionView.Revision</MudText>
+    <MudText Typo="Typo.h5"><strong>Date:</strong> @workingVersionView.AsOfDate</MudText>
+    <MudText Typo="Typo.h5"><strong>Comments:</strong> @workingVersionView.Comments</MudText>
+}
+<MudButton OnClick="GetWorkingVersion"
+           Variant="Variant.Filled"
+           Color="Color.Primary">
+    Get Working Version
+</MudButton>
+@if (!string.IsNullOrWhiteSpace(feedback))
+{
+    <div class="mt-4">
+        <MudAlert Severity="Severity.Error">
+            <MudText Typo="Typo.h4">@feedback</MudText>
+        </MudAlert>
+    </div>
+}
+
+<!--
+==================================================
+# MudBlazor Components Overview
+==================================================
+
+### 1. MudText (Text Component)
+   - Displays styled text based on Material Design typography.
+   - Properties:
+     - `Typo`: Defines text style (e.g., `Typo.h3`, `Typo.h5`, `Typo.h4`).
+   - Example:
+     ```razor
+     <MudText Typo="Typo.h3">Heading</MudText>
+     ```
+
+### 2. MudButton (Button Component)
+   - Represents an interactive button with customizable styles.
+   - Properties:
+     - `OnClick`: Event handler triggered when clicked.
+     - `Variant`: Defines button style:
+       - `Variant.Filled` → Solid button.
+       - `Variant.Outlined` → Button with an outline.
+       - `Variant.Text` → No background or outline.
+     - `Color`: Defines the button color (e.g., `Color.Primary`, `Color.Secondary`).
+   - Example:
+     ```razor
+     <MudButton OnClick="MyFunction" Variant="Variant.Outlined" Color="Color.Success">
+         Click Me
+     </MudButton>
+     ```
+
+### 3. MudAlert (Alert Component)
+   - Displays a message box for notifications, warnings, or errors.
+   - Properties:
+     - `Severity`: Defines alert type:
+       - `Severity.Info` → Informational message.
+       - `Severity.Success` → Success message.
+       - `Severity.Warning` → Warning message.
+       - `Severity.Error` → Error message.
+   - Example:
+     ```razor
+     <MudAlert Severity="Severity.Warning">
+         Warning! Check your input.
+     </MudAlert>
+     ```
+
+### 4. Additional MudBlazor Features Used:
+   - **`<strong>` (HTML Bold)**: Used inside `<MudText>` to emphasize labels.
+   - **`@if(...) {}` (Razor Conditionals)**: Dynamically displays elements based on conditions.
+   - ** Utility Classes**:
+     - `.mt-4` → Adds top margin spacing.
+
+==================================================
+-->
+
