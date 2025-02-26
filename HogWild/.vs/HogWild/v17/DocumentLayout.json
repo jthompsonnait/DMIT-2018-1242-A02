@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|solutionrelative:hogwildweb\\components\\pages\\samplepages\\workingversion.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|solutionrelative:hogwildweb\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\pages\\samplepages\\workingversion.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|solutionrelative:hogwildweb\\components\\pages\\samplepages\\workingversion.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|solutionrelative:hogwildweb\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C56D48C0-2FA5-411C-A630-824FFF56A6E2}|HogWildSystem\\HogWildSystem.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildsystem\\bll\\workingversionsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -73,7 +73,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "HogWildWeb\\Components\\Layout\\NavMenu.razor",
@@ -86,13 +86,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "WorkingVersion.razor.cs",
               "DocumentMoniker": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Pages\\SamplePages\\WorkingVersion.razor.cs",
               "RelativeDocumentMoniker": "HogWildWeb\\Components\\Pages\\SamplePages\\WorkingVersion.razor.cs",
               "ToolTip": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Pages\\SamplePages\\WorkingVersion.razor.cs",
               "RelativeToolTip": "HogWildWeb\\Components\\Pages\\SamplePages\\WorkingVersion.razor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAtwDoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T20:14:50.501Z",
               "EditorCaption": ""
@@ -105,7 +105,7 @@
               "RelativeDocumentMoniker": "HogWildWeb\\Components\\Pages\\SamplePages\\WorkingVersion.razor",
               "ToolTip": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Pages\\SamplePages\\WorkingVersion.razor*",
               "RelativeToolTip": "HogWildWeb\\Components\\Pages\\SamplePages\\WorkingVersion.razor*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-26T20:14:04.992Z",
               "EditorCaption": ""
