@@ -1,0 +1,45 @@
+﻿@page "/SamplePages/CustomerList"
+<PageTitle>Customer List</PageTitle>
+<MudText Typo="Typo.h3">Customers</MudText>
+
+@if (hasError)
+{
+    <MudAlert Elevation="2"
+              Severity="Severity.Error"
+              Dense="true">
+        <MudText Typo="Typo.h3">@errorMessage</MudText>
+        @foreach (var error in errorDetails)
+        {
+            <MudText Typo="Typo.body2">@error</MudText>
+        }
+    </MudAlert>
+}
+
+@if (hasFeedback)
+{
+    <MudAlert Elevation="2"
+              Severity="Severity.Info"
+              Dense="true">
+        <MudText Typo="Typo.h2">@feedbackMessage</MudText>
+    </MudAlert>
+}
+
+<MudStack Row="true" Spacing="4" AlignItems="AlignItems.Center">
+    <MudText Typo="Typo.h5">Customer Search</MudText>
+    <MudTextField @bind-Value="lastName"
+                  Label="Last Name"
+                  Variant="Variant.Outlined" />
+    <MudTextField @bind-Value="phoneNumber"
+                  Label="Phone Number"
+                  Variant="Variant.Outlined" />
+    <MudButton Variant="Variant.Filled"
+               Color="Color.Primary"
+               OnClick="Search">
+        Search
+    </MudButton>
+    <MudButton Variant="Variant.Filled"
+               Color="Color.Primary"
+               OnClick="New">
+        New
+    </MudButton>
+</MudStack>
