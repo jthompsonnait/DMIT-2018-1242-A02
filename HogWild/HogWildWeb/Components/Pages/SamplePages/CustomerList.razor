@@ -4,42 +4,62 @@
 
 @if (hasError)
 {
-    <MudAlert Elevation="2"
-              Severity="Severity.Error"
-              Dense="true">
-        <MudText Typo="Typo.h3">@errorMessage</MudText>
-        @foreach (var error in errorDetails)
-        {
-            <MudText Typo="Typo.body2">@error</MudText>
-        }
-    </MudAlert>
+	<MudAlert Elevation="2" Severity="Severity.Error" Dense="true">
+		<MudText Typo="Typo.h6">@errorMessage</MudText>
+			@foreach (var error in errorDetails)
+			{
+				<MudText Typo="Typo.body2">@error</MudText>
+			}
+	</MudAlert>
 }
+
 
 @if (hasFeedback)
 {
-    <MudAlert Elevation="2"
-              Severity="Severity.Info"
-              Dense="true">
-        <MudText Typo="Typo.h2">@feedbackMessage</MudText>
-    </MudAlert>
+	<MudAlert Elevation="2" Severity="Severity.Info" Dense="true">
+			<MudText Typo="Typo.body2">@feedbackMessage</MudText>
+	</MudAlert>
 }
 
 <MudStack Row="true" Spacing="4" AlignItems="AlignItems.Center">
-    <MudText Typo="Typo.h5">Customer Search</MudText>
-    <MudTextField @bind-Value="lastName"
-                  Label="Last Name"
-                  Variant="Variant.Outlined" />
-    <MudTextField @bind-Value="phoneNumber"
-                  Label="Phone Number"
-                  Variant="Variant.Outlined" />
-    <MudButton Variant="Variant.Filled"
-               Color="Color.Primary"
-               OnClick="Search">
-        Search
-    </MudButton>
-    <MudButton Variant="Variant.Filled"
-               Color="Color.Primary"
-               OnClick="New">
-        New
-    </MudButton>
+	<MudText Typo="Typo.h5">Customer Search</MudText>
+	<MudTextField @bind-Value="lastName" Label="Last Name" Variant="Variant.Outlined"/>
+	<MudTextField @bind-Value="phoneNumber" Label="Phone Number" Variant="Variant.Outlined"/>
+	<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Search">
+		Search
+	</MudButton>
+	<MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="New">
+		New
+	</MudButton>
 </MudStack>
+
+@if (Customers.Count > 0)
+{
+	<MudDataGrid Items="Customers" Striped="true" FixedFooter="true" FixedHeader="true" Height="65vh">
+		<Columns>
+			<TemplateColumn>
+				<HeaderTemplate>Actions</HeaderTemplate>
+				<CellTemplate>
+					<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="() => EditCustomer(context.Item.CustomerID)">
+						Edit
+					</MudButton>
+					<MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="() => NewInvoice(context.Item.CustomerID)" Class="ml-2">
+						New Invoice
+					</MudButton>
+				</CellTemplate>
+			</TemplateColumn>
+			<PropertyColumn Property="x => x.FirstName" Title="First Name" />
+			<PropertyColumn Property="x => x.LastName" Title="Last Name" />
+			<PropertyColumn Property="x => x.City" Title="City" />
+			<PropertyColumn Property="x => x.Phone" Title="Phone" />
+			<PropertyColumn Property="x => x.Email" Title="Email" />
+			<PropertyColumn Property="@(x => x.TotalSales != 0? x.TotalSales.ToString("C2") : string.Empty)" Title="Email" />
+		</Columns>
+		<NoRecordsContent>
+			<MudText Typo="Typo.h6">@((noRecords ? "No customers found." : "Please search for customers."))</MudText>
+		</NoRecordsContent>
+		<PagerContent>
+			<MudDataGridPager />
+		</PagerContent>
+	</MudDataGrid>
+}

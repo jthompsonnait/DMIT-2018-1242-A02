@@ -1,74 +1,102 @@
-﻿using HogWildSystem.BLL;
+﻿using System.Diagnostics;
+using HogWildSystem.BLL;
 using HogWildSystem.ViewModels;
 using Microsoft.AspNetCore.Components;
 
 namespace HogWildWeb.Components.Pages.SamplePages
 {
-    public partial class CustomerList
-    {
-        #region Fields
-        //  The last name
-        private string lastName = string.Empty;
+	public partial class CustomerList
+	{
+		#region fields
 
-        //  The phone number
-        private string phoneNumber = string.Empty;
+		private string lastName = string.Empty;
+		private string phoneNumber = string.Empty;
+		private bool noRecords;
+		private string feedbackMessage = string.Empty;
+		private string errorMessage = string.Empty;
 
-        //  Tells us if the search has been performed
-        private bool noRecords;
+		private bool hasFeedback => !string.IsNullOrWhiteSpace(feedbackMessage);
+		private bool hasError => !string.IsNullOrWhiteSpace(feedbackMessage);
+		private List<string> errorDetails = new();
 
-        //  The feedback message
-        private string feedbackMessage = string.Empty;
+		#endregion
 
-        //  The error message
-        private string errorMessage = string.Empty;
+		#region properties
 
-        //  has feedback
-        private bool hasFeedback => !string.IsNullOrWhiteSpace(feedbackMessage);
+		[Inject] 
+		protected CustomerService CustomerService { get; set; } = default!;
 
-        //  has error
-        private bool hasError => !string.IsNullOrWhiteSpace(errorMessage);
+		[Inject]
+		protected NavigationManager NavigationManager { get; set; } = default!;
+		protected List<CustomerSearchView> Customers { get; set; } = new();
 
-        // error details
-        private List<string> errorDetails = new();
-        #endregion
+		#endregion
 
-        #region Properties
-        //  Injects the CustomerService dependency.
-        [Inject]
-        protected CustomerService CustomerService { get; set; } = default!;
+		#region methods
+		private void Search()
+		{
+			try
+			{
+				noRecords = false;
+				errorDetails.Clear();
+				errorMessage = string.Empty;
+				feedbackMessage = string.Empty;
+				Customers.Clear();
 
-        //  Injects the NavigationManager dependency.
-        [Inject]
-        protected NavigationManager NavigationManager { get; set; } = default!;
+				if (string.IsNullOrWhiteSpace(lastName) && string.IsNullOrWhiteSpace(phoneNumber))
+				{
+					throw new ArgumentException("Please provide either a last name and/or a phone number");
+				}
 
-        //  Get or sets the customers search view        
-        protected List<CustomerSearchView> Customers { get; set; } = new();
-        #endregion
+				Customers = CustomerService.GetCustomers(lastName, phoneNumber);
+				if (Customers.Count > 0)
+				{
+					feedbackMessage = "Search for customer(s) was successful!";
+				}
+				else
+				{
+					feedbackMessage = "No customers were found for your search criteria!";
+					noRecords = true;
+				}
+			}
+			catch (ArgumentNullException ex)
+			{
+				errorMessage = BlazorHelperClass.GetInnerException(ex).Message;
+			}
+			catch (ArgumentException ex)
+			{
+				errorMessage = BlazorHelperClass.GetInnerException(ex).Message;
+			}
+			catch (AggregateException ex)
+			{
+				if (!string.IsNullOrWhiteSpace(errorMessage))
+				{
+					errorMessage = $"{errorMessage}{Environment.NewLine}";
+				}
 
-        #region Methods
-        //  search for an existing customer
-        private void Search()
-        {
+				errorMessage = $"{errorMessage}Unable to search for customer";
+				foreach (var error in ex.InnerExceptions)
+				{
+					errorDetails.Add(error.Message);
+				}
+			}
+		}
 
-        }
+		private void New()
+		{
+			
+		}
 
-        //  new customer
-        private void New()
-        {
+		private void EditCustomer(int customerID)
+		{
 
-        }
+		}
 
-        //  edit customer
-        private void EditCustomer(int customerID)
-        {
+		private void NewInvoice(int customerID)
+		{
 
-        }
+		}
 
-        //  new invoice for selected customer
-        private void NewInvoice(int customerID)
-        {
-
-        }
-        #endregion
-    }
+		#endregion
+	}
 }
