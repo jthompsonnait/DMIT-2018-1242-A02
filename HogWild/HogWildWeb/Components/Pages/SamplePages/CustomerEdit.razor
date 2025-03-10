@@ -13,3 +13,52 @@ else
     <MudText Typo="Typo.h3">Edit Customer: @customer.FirstName @customer.LastName</MudText>
 }
 
+@if (hasError)
+{
+    <MudAlert Elevation="2"
+              Severity="Severity.Error"
+              Dense="true">
+        <MudText Typo="Typo.h6">@errorMessage</MudText>
+        @foreach (var error in errorDetails)
+        {
+            <MudText Typo="Typo.body2">@error</MudText>
+        }
+    </MudAlert>
+}
+@if (hasFeedback)
+{
+    <MudAlert Elevation="2"
+              Severity="Severity.Info"
+              Dense="true">
+        <MudText Typo="Typo.body2">@feedbackMessage</MudText>
+    </MudAlert>
+}
+
+<MudForm @ref="customerForm">
+    <MudGrid>
+        <!-- Column One -->
+        <MudItem xs="6">
+            <MudTextField Label="First Name"
+                          @bind-Value="customer.FirstName"
+                          Variant="Variant.Outlined"
+                          Required="true"
+                          RequiredError="First Name is required."
+                          MaxLength="20"
+                          Immediate="true" />
+            <MudTextField Label="Last Name"
+                          @bind-Value="customer.LastName"
+                          Variant="Variant.Outlined"
+                          Required="true"
+                          RequiredError="Last Name is required."
+                          MaxLength="50"
+                          Immediate="true" />
+            <MudTextField Label="Address 1"
+                          @bind-Value="customer.Address1"
+                          Variant="Variant.Outlined"
+                          Required="true"
+                          RequiredError="Address 1 is required."
+                          MaxLength="50"
+                          Immediate="true" />
+        </MudItem>
+    </MudGrid>
+</MudForm>
