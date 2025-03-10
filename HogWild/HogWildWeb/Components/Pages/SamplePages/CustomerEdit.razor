@@ -1,0 +1,15 @@
+﻿@page "/SamplePages/CustomerEdit/{CustomerID:int}"
+<PageTitle>Customer Edit</PageTitle>
+
+@page "/SamplePages/CustomerEdit/{CustomerID:int}"
+
+<PageTitle>Customer Edit</PageTitle>
+@if (CustomerID == 0)
+{
+    <MudText Typo="Typo.h3">New Customer</MudText>
+}
+else
+{
+    <MudText Typo="Typo.h3">Edit Customer: @customer.FirstName @customer.LastName</MudText>
+}
+
