@@ -6,6 +6,10 @@
 # User-specific files
 *.rsuser
 *.suo
+.suo
+.futdcache.v2
+DocumentLayout.backup.json
+DocumentLayout.json
 *.user
 *.userosscache
 *.sln.docstates
