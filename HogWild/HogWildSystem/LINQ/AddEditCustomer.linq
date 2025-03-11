@@ -82,6 +82,84 @@ public CustomerEditView AddEditCustomer( CustomerEditView  editCustomer)
 		Customers.Where(x => x.CustomerID == editCustomer.CustomerID)
 			.Select(x => x).FirstOrDefault();
 
+	//  new customer
+	if (customer == null)
+	{
+		customer = new Customer();
+	}
+
+	customer.FirstName = editCustomer.FirstName;
+	customer.LastName = editCustomer.LastName;
+	customer.Address1 = editCustomer.Address1;
+	customer.Address2 = editCustomer.Address2;
+	customer.City = editCustomer.City;
+	customer.ProvStateID = editCustomer.ProvStateID;
+	customer.CountryID = editCustomer.CountryID;
+	customer.PostalCode = editCustomer.PostalCode;
+	customer.Email = editCustomer.Email;
+	customer.Phone = editCustomer.Phone;
+	customer.StatusID = editCustomer.StatusID;
+	customer.RemoveFromViewFlag = editCustomer.RemoveFromViewFlag;
+
+	if (errorList.Count > 0)
+	{
+		//  we need to clear the "track changes" otherwise we leave our entity system in flux
+		ChangeTracker.Clear();
+		//  throw the list of business processing error(s)
+		throw new AggregateException("Unable to add or edit customer. Please check error message(s)", errorList);
+	}
+	else
+	{
+		//  new customer
+		if (customer.CustomerID == 0)
+			Customers.Add(customer);
+		else
+			Customers.Update(customer);
+		try
+		{
+			SaveChanges();
+		}
+		catch (Exception ex)
+		{
+
+			throw new Exception($"Error while saving: {ex.Message}");
+		}
+	}
+	return GetCustomer(customer.CustomerID);
+
+}
+
+public CustomerEditView GetCustomer(int customerID)
+{
+	//  Business Rules
+	//	These are processing rules that need to be satisfied
+	//		for valid data
+	//		rule:	customerID must be valid 
+
+	if (customerID == 0)
+	{
+		throw new ArgumentNullException("Please provide a customer");
+	}
+
+	return Customers
+		.Where(x => (x.CustomerID == customerID
+					 && x.RemoveFromViewFlag == false))
+		.Select(x => new CustomerEditView
+		{
+			CustomerID = x.CustomerID,
+			FirstName = x.FirstName,
+			LastName = x.LastName,
+			Address1 = x.Address1,
+			Address2 = x.Address2,
+			City = x.City,
+			ProvStateID = x.ProvStateID,
+			CountryID = x.CountryID,
+			PostalCode = x.PostalCode,
+			Phone = x.Phone,
+			Email = x.Email,
+			StatusID = x.StatusID,
+			RemoveFromViewFlag = x.RemoveFromViewFlag
+		}).FirstOrDefault();
 }
 
 public class CustomerEditView
