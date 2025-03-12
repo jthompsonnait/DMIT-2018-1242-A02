@@ -627,3 +627,6 @@ $RECYCLE.BIN/
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,visualstudio,visualstudiocode,csharp
+HogWild/.vs/HogWild/v17/.futdcache.v2
+HogWild/.vs/HogWild/v17/DocumentLayout.backup.json
+HogWild/.vs/HogWild/v17/DocumentLayout.json
