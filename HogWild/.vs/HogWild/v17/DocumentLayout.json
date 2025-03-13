@@ -76,7 +76,11 @@
               "RelativeDocumentMoniker": "HogWildWeb\\Components\\Pages\\SamplePages\\CustomerEdit.razor.cs",
               "ToolTip": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Pages\\SamplePages\\CustomerEdit.razor.cs",
               "RelativeToolTip": "HogWildWeb\\Components\\Pages\\SamplePages\\CustomerEdit.razor.cs",
+<<<<<<< Updated upstream
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAIcAAAAAAAAAAAAmwIsAAAARAAAAAAAAAA==",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T15:11:33.384Z",
               "EditorCaption": ""

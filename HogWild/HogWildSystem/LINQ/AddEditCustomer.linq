@@ -26,7 +26,7 @@ void Main()
 	AddEditCustomer(customerEdit).Dump();	
 }
 
-public CustomerEditView AddEditCustomer( CustomerEditView  editCustomer)
+public CustomerEditView AddEditCustomer(CustomerEditView  editCustomer)
 {
 	#region Business Logic and Parameter Exceptions
 	//    create a list<Exception> to contain all discovered errors
