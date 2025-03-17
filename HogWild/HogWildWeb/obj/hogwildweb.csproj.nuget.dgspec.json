@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj": {}
+    "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj": {}
   },
   "projects": {
-    "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj": {
+    "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj",
+        "projectUniqueName": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj",
         "projectName": "HogWildSystem",
-        "projectPath": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj",
-        "packagesPath": "C:\\Users\\info\\.nuget\\packages\\",
-        "outputPath": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\obj\\",
+        "projectPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj",
+        "packagesPath": "C:\\Users\\JTHOMPSON\\.nuget\\packages\\",
+        "outputPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\info\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JTHOMPSON\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,7 +27,8 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -76,20 +77,20 @@
         }
       }
     },
-    "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj": {
+    "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj",
+        "projectUniqueName": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj",
         "projectName": "HogWildWeb",
-        "projectPath": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj",
-        "packagesPath": "C:\\Users\\info\\.nuget\\packages\\",
-        "outputPath": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\obj\\",
+        "projectPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj",
+        "packagesPath": "C:\\Users\\JTHOMPSON\\.nuget\\packages\\",
+        "outputPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\info\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JTHOMPSON\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -99,14 +100,15 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj": {
-                "projectPath": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj"
+              "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj": {
+                "projectPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj"
               }
             }
           }

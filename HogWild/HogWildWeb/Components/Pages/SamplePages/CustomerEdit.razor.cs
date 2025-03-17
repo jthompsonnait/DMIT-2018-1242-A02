@@ -36,6 +36,16 @@ namespace HogWildWeb.Components.Pages.SamplePages
         // error details
         private List<string> errorDetails = new();
         #endregion
+
+        #region Validation
+        // flag to if the form is valid.
+        private bool isFormValid;
+        //  flag if data has change
+        private bool hasDataChanged = false;
+        //  set text for cancel/close button
+        private string closeButtonText => hasDataChanged ? "Cancel" : "Close";
+        #endregion
+
         #region Properties
         //  The customer service
         [Inject] protected CustomerService CustomerService { get; set; } = default!;
@@ -45,6 +55,10 @@ namespace HogWildWeb.Components.Pages.SamplePages
 
         //   Injects the NavigationManager dependency
         [Inject] protected NavigationManager NavigationManager { get; set; } = default!;
+
+        //   Injects the DialogService dependency
+        [Inject]
+        protected IDialogService DialogService { get; set; } = default!;
 
         //  Customer ID used to create or edit a customer
         [Parameter] public int CustomerID { get; set; } = 0;
@@ -119,10 +133,10 @@ namespace HogWildWeb.Components.Pages.SamplePages
                 customer = CustomerService.AddEditCustomer(customer);
                 feedbackMessage = "Data was successfully saved!";
 
-                // Reset change tracking
-                //hasDataChanged = false;
-                //isFormValid = false;
-                //customerForm.ResetTouched(); // reset the touched
+                //Reset change tracking
+                hasDataChanged = false;
+                isFormValid = false;
+                customerForm.ResetTouched(); // reset the touched
             }
             catch (ArgumentNullException ex)
             {
@@ -149,8 +163,21 @@ namespace HogWildWeb.Components.Pages.SamplePages
         }
 
         //  Cancels/closes this instance.
-        private void Cancel()
+        private async Task Cancel()
         {
+            if (hasDataChanged)
+            {
+                bool? results = await DialogService.ShowMessageBox("Confirm Cancel",
+                    $"Do you wish to close the customer editor? All unsaved changes will be lost.",
+                    yesText: "Yes", cancelText: "No");
+
+                //  true means affirmative action (e.g., "Yes").
+                //  null means the user dismissed the dialog(e.g., clicking "No" or closing the dialog).
+                if (results == null)
+                {
+                    return;
+                }
+            }
             NavigationManager.NavigateTo("/SamplePages/CustomerList");
         }
         #endregion

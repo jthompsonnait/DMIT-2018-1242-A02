@@ -1,0 +1,50 @@
+﻿@page "/SamplePages/SimpleListToList"
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge">
+    <MudGrid>
+        <MudItem xs="12" md="6">
+            <MudPaper Elevation="4" Class="pa-4">
+                <h3>Available Inventory</h3>
+                <MudTable Items="Inventory" Dense="true">
+                    <HeaderContent>
+                        <MudTh>Description</MudTh>
+                        <MudTh>Price</MudTh>
+                        <MudTh>Action</MudTh>
+                    </HeaderContent>
+                    <RowTemplate Context="item">
+                        <MudTd>@item.Description</MudTd>
+                        <MudTd>@item.Price.ToString("C")</MudTd>
+                        <MudTd>
+                            <MudButton Color="Color.Primary" OnClick="() => AddPartToCart(item.PartID)">
+                                <MudIcon Icon="@Icons.Material.Filled.AddShoppingCart" />
+                            </MudButton>
+                        </MudTd>
+                    </RowTemplate>
+                </MudTable>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" md="6">
+            <MudPaper Elevation="4" Class="pa-4">
+                <h3>Shopping Cart</h3>
+                <MudTable Items="ShoppingCart" Dense="true">
+                    <HeaderContent>
+                        <MudTh>Description</MudTh>
+                        <MudTh>Price</MudTh>
+                        <MudTh>Action</MudTh>
+                    </HeaderContent>
+                    <RowTemplate Context="item">
+                        <MudTd>@item.Description</MudTd>
+                        <MudTd>@item.Price.ToString("C")</MudTd>
+                        <MudTd>
+                            <MudButton Color="Color.Error"
+                                       OnClick="() => RemovePartFromCart(item.PartID)">
+                                <MudIcon Icon="@Icons.Material.Filled.RemoveShoppingCart" />
+                            </MudButton>
+                        </MudTd>
+                    </RowTemplate>
+                </MudTable>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+</MudContainer>

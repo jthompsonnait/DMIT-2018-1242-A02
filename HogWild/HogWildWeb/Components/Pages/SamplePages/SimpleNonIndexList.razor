@@ -1,0 +1,38 @@
+﻿@page "/SamplePages/SimpleNonIndexList"
+
+<MudContainer MaxWidth="MaxWidth.Small">
+    <MudPaper Elevation="4" Class="pa-4">
+        <h3>Customer List</h3>
+
+        <!-- Input for adding a new customer -->
+        <MudTextField @bind-Value="customerName" Label="Enter Customer Name"
+                      Variant="Variant.Outlined" Adornment="Adornment.Start">
+            <AdornmentIcon>
+                <MudIcon Icon="@Icons.Material.Filled.PersonAdd" />
+            </AdornmentIcon>
+        </MudTextField>
+
+        <MudButton Color="Color.Primary" OnClick="AddCustomerToList" Class="mt-2">
+            <MudIcon Icon="@Icons.Material.Filled.AddCircleOutline" />
+            Add Customer
+        </MudButton>
+
+        <MudTable Items="Customers" Dense="true" Class="mt-4">
+            <HeaderContent>
+                <MudTh>Customer ID</MudTh>
+                <MudTh>Name</MudTh>
+                <MudTh>Action</MudTh>
+            </HeaderContent>
+            <RowTemplate Context="item">
+                <MudTd>@item.CustomerID</MudTd>
+                <MudTd>@item.FirstName</MudTd>
+                <MudTd>
+                    <MudButton Color="Color.Error"
+                               OnClick="() => RemoveCustomer(item.CustomerID)">
+                        <MudIcon Icon="@Icons.Material.Filled.Delete" />
+                    </MudButton>
+                </MudTd>
+            </RowTemplate>
+        </MudTable>
+    </MudPaper>
+</MudContainer>
