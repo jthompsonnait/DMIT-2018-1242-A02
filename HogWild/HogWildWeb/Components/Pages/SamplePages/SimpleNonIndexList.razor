@@ -6,10 +6,10 @@
 
         <!-- Input for adding a new customer -->
         <MudTextField @bind-Value="customerName" Label="Enter Customer Name"
-                      Variant="Variant.Outlined" Adornment="Adornment.Start">
-            <AdornmentIcon>
-                <MudIcon Icon="@Icons.Material.Filled.PersonAdd" />
-            </AdornmentIcon>
+                      Variant="Variant.Outlined" Adornment="Adornment.End" a
+                      AdornmentIcon="@Icons.Material.Filled.PersonAdd"
+                      OnAdornmentClick="AddCustomerToList">
+
         </MudTextField>
 
         <MudButton Color="Color.Primary" OnClick="AddCustomerToList" Class="mt-2">
