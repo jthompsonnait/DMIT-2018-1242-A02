@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Components;
 
 namespace HogWildWeb.Components.Pages.SamplePages
 {
-    public partial class SimpleListToList : ComponentBase
+    public partial class SimpleListToList
     {
-        [Inject] protected PartService? PartService { get; set; }
+        [Inject] protected PartService PartService { get; set; } = default!;
 
         public List<PartView> Inventory { get; set; } = new();
         public List<InvoiceLineView> ShoppingCart { get; set; } = new();

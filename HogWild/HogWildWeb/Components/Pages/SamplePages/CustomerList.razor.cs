@@ -63,7 +63,7 @@ namespace HogWildWeb.Components.Pages.SamplePages
                 errorMessage = string.Empty;
 
                 //  reset feedback message to an empty string
-                feedbackMessage = String.Empty;
+                feedbackMessage = string.Empty;
 
                 //  clear the customer list before we do our search
                 Customers.Clear();
