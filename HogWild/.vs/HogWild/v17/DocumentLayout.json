@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\pages\\samplepages\\simplenonindexlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|solutionrelative:hogwildweb\\components\\pages\\samplepages\\simplenonindexlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\pages\\samplepages\\simplenonindexlist.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|solutionrelative:hogwildweb\\components\\pages\\samplepages\\simplenonindexlist.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\pages\\samplepages\\simplenonindexlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|solutionrelative:hogwildweb\\components\\pages\\samplepages\\simplenonindexlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00E8CF5A-20E1-8EFF-B34E-375491E64BA2}|HogWildWeb\\HogWildWeb.csproj|c:\\github\\jan25\\dmit-2018-1242-a02\\hogwild\\hogwildweb\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -74,29 +74,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "SimpleNonIndexList.razor.cs",
               "DocumentMoniker": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Pages\\SamplePages\\SimpleNonIndexList.razor.cs",
               "RelativeDocumentMoniker": "HogWildWeb\\Components\\Pages\\SamplePages\\SimpleNonIndexList.razor.cs",
               "ToolTip": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Pages\\SamplePages\\SimpleNonIndexList.razor.cs",
               "RelativeToolTip": "HogWildWeb\\Components\\Pages\\SamplePages\\SimpleNonIndexList.razor.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAIwBwAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T14:32:33.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "SimpleNonIndexList.razor",
               "DocumentMoniker": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Pages\\SamplePages\\SimpleNonIndexList.razor",
               "RelativeDocumentMoniker": "HogWildWeb\\Components\\Pages\\SamplePages\\SimpleNonIndexList.razor",
-              "ToolTip": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Pages\\SamplePages\\SimpleNonIndexList.razor*",
-              "RelativeToolTip": "HogWildWeb\\Components\\Pages\\SamplePages\\SimpleNonIndexList.razor*",
+              "ToolTip": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\Components\\Pages\\SamplePages\\SimpleNonIndexList.razor",
+              "RelativeToolTip": "HogWildWeb\\Components\\Pages\\SamplePages\\SimpleNonIndexList.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-17T14:26:18.161Z",
@@ -112,7 +112,8 @@
               "RelativeToolTip": "HogWildSystem\\HogWildExtension.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAQwEIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T20:26:25.892Z"
+              "WhenOpened": "2025-03-12T20:26:25.892Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -124,7 +125,8 @@
               "RelativeToolTip": "HogWildSystem\\ViewModels\\PartView.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAA1wAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T20:25:43.696Z"
+              "WhenOpened": "2025-03-12T20:25:43.696Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -136,7 +138,8 @@
               "RelativeToolTip": "HogWildSystem\\ViewModels\\LookupView.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T20:25:39.516Z"
+              "WhenOpened": "2025-03-12T20:25:39.516Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -148,7 +151,8 @@
               "RelativeToolTip": "HogWildWeb\\Components\\Pages\\SamplePages\\SimpleListToList.razor.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T20:22:02.397Z"
+              "WhenOpened": "2025-03-12T20:22:02.397Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -186,7 +190,8 @@
               "RelativeToolTip": "HogWildWeb\\Components\\Pages\\SamplePages\\CustomerList.razor",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-10T14:56:37.644Z"
+              "WhenOpened": "2025-03-10T14:56:37.644Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -198,7 +203,8 @@
               "RelativeToolTip": "HogWildWeb\\Components\\Pages\\SamplePages\\CustomerEdit.razor.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-10T15:12:12.364Z"
+              "WhenOpened": "2025-03-10T15:12:12.364Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -223,7 +229,8 @@
               "RelativeToolTip": "HogWildWeb\\Components\\Pages\\SamplePages\\CustomerEdit.razor",
               "ViewState": "AgIAAHwAAAAAAAAAAAAkwIIAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-10T15:11:13.029Z"
+              "WhenOpened": "2025-03-10T15:11:13.029Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -235,7 +242,8 @@
               "RelativeToolTip": "HogWildWeb\\Components\\Pages\\SamplePages\\CustomerList.razor.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAwwG0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T14:56:40.138Z"
+              "WhenOpened": "2025-03-10T14:56:40.138Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -247,7 +255,8 @@
               "RelativeToolTip": "HogWildSystem\\ViewModels\\CustomerSearchView.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAmwCYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T14:53:05.391Z"
+              "WhenOpened": "2025-03-10T14:53:05.391Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -259,7 +268,8 @@
               "RelativeToolTip": "HogWildSystem\\BLL\\CustomerService.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAAAiwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T14:51:54.807Z"
+              "WhenOpened": "2025-03-10T14:51:54.807Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -271,7 +281,8 @@
               "RelativeToolTip": "HogWildSystem\\ViewModels\\CustomerEditView.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T14:47:28.081Z"
+              "WhenOpened": "2025-03-10T14:47:28.081Z",
+              "EditorCaption": ""
             }
           ]
         }
