@@ -17,6 +17,7 @@ namespace HogWildWeb.Components.Pages.SamplePages
         private List<LookupView> countries = new();
         //  The status lookup
         private List<LookupView> statusLookup = new();
+        private List<InvoiceView> invoices = new List<InvoiceView>();
         //  mudform control
         private MudForm customerForm = new();
         #endregion
@@ -53,6 +54,9 @@ namespace HogWildWeb.Components.Pages.SamplePages
         //  Category/lookup service
         [Inject] protected CategoryLookupService CategoryLookupService { get; set; } = default!;
 
+        //  The invoice service
+        [Inject] protected InvoiceService InvoiceService { get; set; } = default!;
+
         //   Injects the NavigationManager dependency
         [Inject] protected NavigationManager NavigationManager { get; set; } = default!;
 
@@ -83,6 +87,7 @@ namespace HogWildWeb.Components.Pages.SamplePages
                 if (CustomerID > 0)
                 {
                     customer = CustomerService.GetCustomer(CustomerID) ?? new();
+                    invoices = InvoiceService.GetCustomerInvoices(CustomerID);
                 }
 
                 // lookups
@@ -179,6 +184,23 @@ namespace HogWildWeb.Components.Pages.SamplePages
                 }
             }
             NavigationManager.NavigateTo("/SamplePages/CustomerList");
+        }
+
+        /// New invoice.
+        private void NewInvoice()
+        {
+            //  NOTE:   we will hard code employee ID (1)            
+            NavigationManager.NavigateTo($"/SamplePages/InvoiceEdit/0/{CustomerID}/1");
+        }
+
+        /// <summary>
+        /// Edit the invoice.
+        /// </summary>
+        /// <param name="invoiceID">The invoice identifier.</param>
+        private void EditInvoice(int invoiceID)
+        {
+            //  NOTE:   we will hard code employee ID (1)            
+            NavigationManager.NavigateTo($"/SamplePages/InvoiceEdit/{invoiceID}/{CustomerID}/1");
         }
         #endregion
     }

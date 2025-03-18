@@ -139,7 +139,44 @@ else
                        OnClick="Cancel"
                        Class="ml-4">
                 @closeButtonText
-            </MudButton>  
+            </MudButton>
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Success"
+                       OnClick="NewInvoice"
+                       Class="ml-4">
+                New Invoice
+            </MudButton>
+        </MudItem>
+        <MudItem xs="12" Class="mt-4">
+            <MudDataGrid Items="invoices"
+                         Striped="true"
+                         FixedFooter="true"
+                         FixedHeader="true"
+                         Height="65vh">
+                <Columns>
+                    <TemplateColumn>
+                        <HeaderTemplate>
+                            Actions
+                        </HeaderTemplate>
+                        <CellTemplate>
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       OnClick="() => EditInvoice(context.Item.InvoiceID)">
+                                Edit Invoice
+                            </MudButton>
+                        </CellTemplate>
+                    </TemplateColumn>
+                    <PropertyColumn Property="x => x.InvoiceID" Title="Invoice ID" />
+                    <PropertyColumn Property="x => x.InvoiceDate" Title="InvoiceDate" />
+                    <PropertyColumn Property="@(x => x.Total.ToString("C2"))" Title="Total" />
+                </Columns>
+                <NoRecordsContent>
+                    <MudText Typo="Typo.h6">No Invoices for the Customer.</MudText>
+                </NoRecordsContent>
+                <PagerContent>
+                    <MudDataGridPager />
+                </PagerContent>
+            </MudDataGrid>
         </MudItem>
     </MudGrid>
 </MudForm>

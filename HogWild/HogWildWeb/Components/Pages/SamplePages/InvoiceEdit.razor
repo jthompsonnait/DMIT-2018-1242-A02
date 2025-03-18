@@ -1,0 +1,154 @@
+﻿@page "/SamplePages/InvoiceEdit/{InvoiceID:int}/{CustomerID:int}/{EmployeeID:int}"
+
+<PageTitle>Invoice Edit</PageTitle>
+
+<MudText Typo="Typo.h3">@(InvoiceID == 0 ? "New Invoice" : $"Invoice #: {InvoiceID}")</MudText>
+
+<DMITMessageDisplay ErrorMessage="@errorMessage" ErrorMsgs="@errorDetails" Feedback="@feedbackMessage" />
+
+<MudGrid>
+    <MudItem sm="12" md="6">
+        <MudPaper Elevation="2" Class="pa-2" Height="145px">
+            <MudStack>
+                <MudText Typo="Typo.h6" Align="Align.Center"><strong>Invoice Date: </strong>@invoice.InvoiceDate.ToShortDateString()</MudText>
+                <MudText Typo="Typo.h6" Align="Align.Center"><strong>Employee: </strong>@invoice.EmployeeName</MudText>
+                <MudText Typo="Typo.h6" Align="Align.Center"><strong>Customer: </strong>@invoice.CustomerName</MudText>
+            </MudStack>
+        </MudPaper>
+    </MudItem>
+    <MudItem sm="12" md="6">
+        <MudPaper Elevation="2" Class="pa-2" Height="145px">
+            <MudStack>
+                <MudText Typo="Typo.h6" Align="Align.Center"><strong>SubTotal: </strong>@invoice.SubTotal.ToString("C2")</MudText>
+                <MudText Typo="Typo.h6" Align="Align.Center"><strong>Tax: </strong>@invoice.Tax.ToString("C2")</MudText>
+                <MudDivider DividerType="DividerType.Middle" />
+                <MudText Typo="Typo.h6" Align="Align.Center"><strong>Total: </strong>@invoice.Total.ToString("C2")</MudText>
+            </MudStack>
+        </MudPaper>
+    </MudItem>
+</MudGrid>
+<MudStack Row
+          Class="mt-2"
+          AlignItems="AlignItems.Center"
+          Justify="Justify.FlexStart"
+          Spacing="4">
+    <MudSelect @bind-Value="categoryID"
+               Variant="Variant.Outlined">
+        @foreach (var category in partCategories)
+        {
+            <MudSelectItem T="int?" Value="@category.LookupID">@category.Name</MudSelectItem>
+        }
+    </MudSelect>
+    <MudTextField @bind-Value="description"
+                  Label="Description"
+                  Variant="Variant.Outlined"
+                  Immediate/>
+    <MudButton Variant="Variant.Filled"
+               Color="Color.Secondary"
+               OnClick="SearchParts">
+        Search       
+    </MudButton>
+</MudStack>
+<MudDataGrid Items="parts.Where(p => !invoice.InvoiceLines.Select(x => x.PartID).Contains(p.PartID))"
+             Striped
+             Dense
+             Class="mt-2"
+             FixedFooter="true"
+             FixedHeader="true"
+             Height="23vh">
+    <Columns>
+        <TemplateColumn>
+            <CellTemplate>
+                    <MudButton Variant="Variant.Text"
+                               Color="Color.Success"
+                               OnClick="@(() => AddPart(context.Item.PartID))"
+                           StartIcon="@Icons.Material.Filled.Add">
+                        Add
+                    </MudButton>
+            </CellTemplate>
+        </TemplateColumn>
+        <PropertyColumn Property="x => x.PartID" Title="Part ID" />
+        <PropertyColumn Property="x => x.Description" Title="Description" />
+        <PropertyColumn Property="@(x => x.Cost.ToString("C2"))" Title="Cost" />
+        <PropertyColumn Property="@(x => x.Price.ToString("C2"))" Title="Price" />
+        <PropertyColumn Property="x => x.ROL" Title="ROL" />
+        <PropertyColumn Property="x => x.QOH" Title="QOH" />
+    </Columns>
+    <NoRecordsContent>
+        <MudText Typo="Typo.h6">@(noParts ? "No parts match your search" : "Please search for parts")</MudText>
+    </NoRecordsContent>
+</MudDataGrid>
+<!-- You must have the EditMode, EditTrigger, and ReadOnly False to make a grid editable -->
+<MudDataGrid Items="invoice.InvoiceLines"
+             Striped
+             Dense
+             Class="mt-2"
+             FixedFooter="true"
+             FixedHeader="true"
+             Height="23vh"
+             EditMode="DataGridEditMode.Cell"
+             EditTrigger="DataGridEditTrigger.OnRowClick"
+             ReadOnly="false">
+    <Columns>
+        <!-- Ensure template columns are set to editable false when the grid is editable -->
+        <TemplateColumn Editable="false">
+            <CellTemplate>
+                <MudButton Variant="Variant.Text"
+                           Color="Color.Error"
+                           OnClick="@(() => DeleteInvoiceLine(context.Item))"
+                           StartIcon="@Icons.Material.Filled.Delete">
+                    Remove
+                </MudButton>
+            </CellTemplate>
+        </TemplateColumn>
+        <PropertyColumn Property="x => x.PartID" Title="Part ID" Editable="false" />
+        <PropertyColumn Property="x => x.Description" Title="Description" Editable="false" />
+        <PropertyColumn Property="x => x.Quantity" Title="QTO (Max QOH)" Editable="true">
+            <EditTemplate>
+                <MudNumericField Value="context.Item.Quantity"
+                                 ValueChanged="(int newQuantity) => QuantityEdited(context.Item, newQuantity)"
+                                 Immediate="true"
+                                 Margin="Margin.Dense"
+                                 For="@(() => context.Item.Quantity)"
+                                 Min="0"
+                                 Max="@(parts.Where(p => p.PartID == context.Item.PartID).Select(p => p.QOH).FirstOrDefault())"
+                                 Step="1" />
+            </EditTemplate>
+        </PropertyColumn>>
+        <PropertyColumn Property="x => x.Price" Title="Price" Format="C2" Editable="true">
+            <EditTemplate>
+                <MudNumericField Value="context.Item.Price"
+                                 ValueChanged="(decimal newPrice) => PriceEdited(context.Item, newPrice)"
+                                 Format="C2"
+                                 Immediate="true"
+                                 Margin="Margin.Dense"
+                                 For="@(() => context.Item.Price)"
+                                 Min="0.00m"
+                                 Step="0.01m" />
+            </EditTemplate>
+        </PropertyColumn>
+        <PropertyColumn Property="x => x.ExtentPrice" Title="Ext. Price" Editable="false" />
+        <TemplateColumn Editable="false">
+            <CellTemplate>
+                <MudIconButton OnClick="() => SyncPrice(context.Item)"
+                               Size="Size.Small"
+                               Icon="@Icons.Material.Filled.Refresh" />
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+</MudDataGrid>
+<MudStack Class="mt-2"
+          Row
+          AlignItems="AlignItems.Center"
+          Justify="Justify.Center">
+    <MudButton Color="Color.Primary"
+               Variant="Variant.Filled"
+               OnClick="Save">
+        Save Invoice       
+    </MudButton>
+    <MudButton Color="Color.Error"
+               Variant="Variant.Filled"
+               OnClick="Close">
+        Close/Cancel
+    </MudButton>
+</MudStack>

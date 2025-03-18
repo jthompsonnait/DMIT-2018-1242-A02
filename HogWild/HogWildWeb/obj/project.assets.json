@@ -1274,7 +1274,7 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
-      "MudBlazor/8.3.0": {
+      "MudBlazor/8.4.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Components": "9.0.1",
@@ -4149,10 +4149,10 @@
         "readme.md"
       ]
     },
-    "MudBlazor/8.3.0": {
-      "sha512": "DLc1aK8AgSas82AERWLLefWKadIF7HhYhvgO8Y7jYLZe5v1r4v3rX9pzrzTsQkuPGe6y65tob73kM6gael+WdQ==",
+    "MudBlazor/8.4.0": {
+      "sha512": "JdpJXe13fhPElc4ajoDEr7tbzib+N1SVUaov21lZAVd0DgRWuVTJsfVyrEFCD/oSopRcvub5cpHSJM7MYUVCfQ==",
       "type": "package",
-      "path": "mudblazor/8.3.0",
+      "path": "mudblazor/8.4.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4170,7 +4170,7 @@
         "lib/net8.0/MudBlazor.xml",
         "lib/net9.0/MudBlazor.dll",
         "lib/net9.0/MudBlazor.xml",
-        "mudblazor.8.3.0.nupkg.sha512",
+        "mudblazor.8.4.0.nupkg.sha512",
         "mudblazor.nuspec",
         "staticwebassets/MudBlazor.min.css",
         "staticwebassets/MudBlazor.min.js"
@@ -5388,23 +5388,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JTHOMPSON\\.nuget\\packages\\": {},
+    "C:\\Users\\info\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj",
+      "projectUniqueName": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj",
       "projectName": "HogWildWeb",
-      "projectPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj",
-      "packagesPath": "C:\\Users\\JTHOMPSON\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\obj\\",
+      "projectPath": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\HogWildWeb.csproj",
+      "packagesPath": "C:\\Users\\info\\.nuget\\packages\\",
+      "outputPath": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\JTHOMPSON\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\info\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5414,15 +5414,14 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.telerik.com/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj": {
-              "projectPath": "C:\\GitHub\\Jan25\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj"
+            "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj": {
+              "projectPath": "E:\\GitHub\\_Jan 2025\\DMIT-2018-1242-A02\\HogWild\\HogWildSystem\\HogWildSystem.csproj"
             }
           }
         }
