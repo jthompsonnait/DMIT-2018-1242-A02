@@ -76,14 +76,14 @@ namespace HogWildSystem
                 return new PartService(context);
             });
 
-            services.AddScoped<InvoiceService>((ServiceProvider) =>
+            services.AddTransient<InvoiceService>((ServiceProvider) =>
             {
                 //  Retrieve an instance of HogWildContext from the service provider.
                 var context = ServiceProvider.GetService<HogWildContext>();
 
-                return context == null
-                    ? throw new InvalidOperationException("HogWildContext is not registered.")
-                    : new InvoiceService(context);
+                // Create a new instance of WorkingVersionsService,
+                //   passing the HogWildContext instance as a parameter.
+                return new InvoiceService(context);
             });
         }
     }
