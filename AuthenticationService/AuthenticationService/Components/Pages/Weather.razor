@@ -1,0 +1,106 @@
+﻿@page "/weather"
+@using System.Security.Claims
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<PageTitle>Weather</PageTitle>
+
+<h1>Weather</h1>
+<p>UserID: @userId</p>
+<p>User Name: @userName</p>
+<p>User Email: @email</p>
+<p>User Role(s): @(roles.Any() ? string.Join(", ", roles) : "None")</p>
+<AuthorizeView Roles="Admin, Manager">
+    <NotAuthorized>
+        <p>You do not have access to this content.  Please contact an admin for assistance</p>
+    </NotAuthorized>
+    <Authorized>
+        <p>This component demonstrates showing data.</p>
+
+        @if (forecasts == null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th aria-label="Temperature in Celsius">Temp. (C)</th>
+                        <th aria-label="Temperature in Farenheit">Temp. (F)</th>
+                        <th>Summary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var forecast in forecasts)
+                    {
+                        <tr>
+                            <td>@forecast.Date.ToShortDateString()</td>
+                            <td>@forecast.TemperatureC</td>
+                            <td>@forecast.TemperatureF</td>
+                            <td>@forecast.Summary</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }@if (AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Identity.IsAuthenticated &&
+        AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.IsInRole("Admin"))
+        {
+            <button onclick="@RefreshWeather">Refresh</button>
+        }
+    </Authorized>
+</AuthorizeView>
+@code {
+    private WeatherForecast[]? forecasts;
+    private string? userId;
+    private string? userName;
+    private string? email;
+    private List<string> roles = new();
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity is not null && user.Identity.IsAuthenticated)
+        {
+            //  This is the unique user ID from AspNetUsers.Id (usually a GUID).
+            //  It’s never an email or username.
+            userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            //  This is usually the UserName field from AspNetUsers.UserName
+            //  Could be an email if email was used as the username during registration.
+            //  Otherwise, it could be something like yourName123, etc.
+            userName = user.Identity.Name; // or user.FindFirst(ClaimTypes.Name)?.Value
+
+            //  This is the actual email address from AspNetUsers.Email
+            email = user.FindFirst(ClaimTypes.Email)?.Value;
+
+            // Get all role claims
+            roles = user.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList();
+        }
+        // Simulate asynchronous loading to demonstrate a loading indicator
+        await Task.Delay(500);
+        RefreshWeather();
+
+
+    }
+    public void RefreshWeather()
+    {
+        var startDate = DateOnly.FromDateTime(DateTime.Now);
+        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = startDate.AddDays(index),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = summaries[Random.Shared.Next(summaries.Length)]
+            }).ToArray();
+    }
+
+    private class WeatherForecast
+    {
+        public DateOnly Date { get; set; }
+        public int TemperatureC { get; set; }
+        public string? Summary { get; set; }
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+}
